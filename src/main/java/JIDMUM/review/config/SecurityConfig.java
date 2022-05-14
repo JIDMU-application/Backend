@@ -35,7 +35,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterBefore(corsFilter(), SessionManagementFilter.class) //adds custom CorsFilter
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/api/review").permitAll()
                 .anyRequest()
                 .authenticated()
         // use stateless session, so user's state is not stored
